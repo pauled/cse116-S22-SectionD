@@ -11,6 +11,11 @@ object RunPlayer {
     val player3:Player=player2
     player3.move(3.0,3.0)
     println(player3)
+    var hp1:HealthPotion=
+        new HealthPotion(0,0,10)
+    hp1.move(2,3)
+    var t1:Transporter=new Transporter(0,0,3.0,4.0)
+    t1.move(5,6)
   }
 
 }
