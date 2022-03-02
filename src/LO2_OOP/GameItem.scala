@@ -1,10 +1,8 @@
 package LO2_OOP
 
-abstract class GameItem (var xLoc:Double,var yLoc:Double){
+abstract class GameItem (var xLoc1:Double,
+                         var yLoc1:Double)
+      extends GameObject (xLoc1,yLoc1){
   def use(player: Player): Unit
 
-  def move(dx:Double,dy:Double):Unit={
-    this.xLoc+=dx
-    this.yLoc+=dy
-  }
 }

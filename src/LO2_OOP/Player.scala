@@ -1,7 +1,8 @@
 package LO2_OOP
 
-class Player (var xLoc:Double,var yLoc:Double,
-              var maxHitPoint:Int){
+class Player (var xLoc1:Double,var yLoc1:Double,
+              var maxHitPoint:Int)
+      extends GameObject (xLoc1,yLoc1){
   var health:Int=maxHitPoint
   var damage:Int=4
 
@@ -11,15 +12,11 @@ class Player (var xLoc:Double,var yLoc:Double,
   def attack(otherPlayer:Player):Unit={
     otherPlayer.takeDamage(this.damage)
   }
-  def move(dx:Double,dy:Double):Unit={
-    this.xLoc+=dx
-    this.yLoc+=dy
-  }
-  /*override def toString():String={
-    var out:String="xLocation: "+this.xLoc
-    out+=" yLocation: "+this.yLoc
-    out+="health "+this.health+"/"+this.maxHitPoint
+
+  override def toString():String={
+    var out:String=super.toString
+    out+=" health "+this.health+"/"+this.maxHitPoint
     out
-  }*/
+  }
 
 }
