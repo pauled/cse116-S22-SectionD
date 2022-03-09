@@ -18,6 +18,19 @@ object RunPlayer {
         Transporter(0,0,3.0,4.0)
     t1.move(5,6)
     println(t1)
+    var general:GameItem=new
+        HealthPotion(1,2,10)
+
+    player1.pickUpItem(hp1)
+    player1.pickUpItem(t1)
+    player1.pickUpItem(general)
+    var go:GameObject=new
+        HealthPotion(4,5,10)
+    var hp2=hp1
+    println("hp1==hp2: "+(hp1==hp2))
+    println("hp1==go: "+(hp1==go))
+    println("go==hp1: "+(go==hp1))
+    //player1.pickUpItem(go) bad
   }
 
 }
