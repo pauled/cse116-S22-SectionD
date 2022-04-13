@@ -37,7 +37,23 @@ class LinkedListNode[T] (var value:T,
     }
   }
   //add/remove
+  def insertAfter(element:T):Unit={
+    this.next=new LinkedListNode[T](element,
+      this.next)
+  }
+  def deleteAfter():Unit={
+    this.next=this.next.next
+  }
   //find(element)
+  def find(element:T):LinkedListNode[T]={
+    if (element==this.value) {
+      this
+    } else if(this.next==null){
+      null
+    } else {
+      this.next.find(element)
+    }
+  }
 }
 object runLLN{
   def main(args: Array[String]): Unit = {
