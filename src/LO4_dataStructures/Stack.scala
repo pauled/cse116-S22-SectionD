@@ -24,7 +24,20 @@ object runStack{
     stack.push(2)
     stack.push(4)
     stack.push(8)
-    println(stack.pop())
     println(stack)
+    val temp=stack.pop()
+    println(temp)
+    println(stack)
+
+    val deck:Stack[Card]=new Stack()
+    val suits:Array[String]=Array("Hearts","Clubs",
+    "Diamonds","Spades")
+    for (suit <- suits){
+      for (i <- 1 to 13) {
+        deck.push(new Card(suit,i))
+      }
+    }
+    println(deck)
   }
+
 }
