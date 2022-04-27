@@ -23,4 +23,24 @@ class Queue [A]{
     }
     toReturn
   }
+  def empty():Boolean={
+    this.front==null
+  }
+  def contains(a:A):Boolean={
+    if (this.front==null){
+      false
+    } else if (null==this.front.find(a)){
+      false
+    } else {
+      true
+    }
+  }
+
+  override def toString: String = {
+    if (this.front==null){
+      ""
+    } else {
+      this.front.toString
+    }
+  }
 }

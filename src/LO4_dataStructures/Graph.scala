@@ -12,6 +12,24 @@ class Graph [A]{
   }
 }
 object runGraph{
+  def BFS[A](graph: Graph[A],startID:Int):Unit={
+    val explored:Queue[Int]=new Queue()
+    val toExplore:Queue[Int]=new Queue()
+    toExplore.enqueue(startID)
+    explored.enqueue(startID)
+    while(!toExplore.empty()){
+      val notToExplore=toExplore.dequeue()
+      for (node <- graph.adjacencyList(notToExplore)){
+        println("explored: "+explored)
+        println("toExplore: "+toExplore)
+        if (!explored.contains(node)){
+          println("exploring:"+graph.nodes(node))
+          toExplore.enqueue(node)
+          explored.enqueue(node)
+        }
+      }
+    }
+  }
   def main(args: Array[String]): Unit = {
     var graph:Graph[String]=new Graph()
     graph.addNode(0,"DUL")
@@ -29,5 +47,6 @@ object runGraph{
     graph.addEdge(2,3)
     graph.addEdge(3,2)
     graph.addEdge(3,1)
+    BFS(graph,0)
   }
 }
